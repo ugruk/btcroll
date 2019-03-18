@@ -7,6 +7,8 @@ def frominsightapi(key, address, baseurl, chain):
             balance = r.json()['balance']
             try:
                 val = float(balance)
+                if val is None:
+                    return 0
                 return val
             except:
                 static.errors(key,address)
