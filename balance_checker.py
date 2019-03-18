@@ -8,6 +8,7 @@ def frominsightapi(key, address, baseurl, chain):
             try:
                 val = float(balance)
                 if val is None:
+                    static.errors(key,address)
                     return 0
                 return val
             except:
